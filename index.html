@@ -73,6 +73,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-dl-1-extra" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/22/dl-1-extra/" class="article-date">
+  <time class="dt-published" datetime="2024-02-21T18:01:35.000Z" itemprop="datePublished">2024-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/22/dl-1-extra/">dl_1-extra</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="深度学习笔记（一）补充：深刻理解梯度下降"><a href="#深度学习笔记（一）补充：深刻理解梯度下降" class="headerlink" title="深度学习笔记（一）补充：深刻理解梯度下降"></a>深度学习笔记（一）补充：深刻理解梯度下降</h1><p>在《Deep learning》一书中关于方向导数如何求导的部分被简略带过了，在进行深入思考以后进行了推导如下：</p>
+<p>重新回到问题：</p>
+<p>给定方向函数 $f(x+\alpha u)$，其中 $x$ 是一个 $m \times 1$ 的列向量，$\alpha $ 是一个 $m \times n$ 的矩阵，$u$ 是一个 $n \times 1$ 的方向向量，求在 $\alpha&#x3D;0$ 的时候关于 $\alpha$ 的方向导数.</p>
+<p>使用链式法则，我们可以得到：</p>
+<p>$\frac{\partial f}{\partial \alpha}&#x3D;\frac{\partial (\alpha u)}{\partial \alpha}\nabla_x f(x)$</p>
+<p>如果要计算 $ y &#x3D; Ax $ 关于矩阵 $ A $ 的梯度，也就是 $ \frac{\partial y}{\partial A} $，我们需要考虑 $ y $ 中每个元素相对于矩阵 $ A $ 中每个元素的偏导数。</p>
+<p>设 $ y $ 是一个 $ m \times 1 $ 的列向量，$ A $ 是一个 $ m \times n $ 的矩阵，$ x $ 是一个 $ n \times 1 $ 的列向量。那么，$ y $ 的每个元素 $ y_i $ 可以表示为：</p>
+<p>$ y_i &#x3D; \sum_{j&#x3D;1}^{n} A_{ij}x_j $</p>
+<p>现在，我们来计算 $ y_i $ 关于 $ A_{pq} $ 的偏导数 $ \frac{\partial y_i}{\partial A_{pq}} $。当 $ p &#x3D; i $ 时，有：</p>
+<p>$ \frac{\partial y_i}{\partial A_{pq}} &#x3D; x_q $</p>
+<p>否则， $ \frac{\partial y_i}{\partial A_{pq}} &#x3D; 0 $。</p>
+<p>因此， $ \frac{\partial y}{\partial A} $ 是一个 $ m \times n $ 的矩阵，其中第 $ i $ 行第 $ j $ 列的元素是 $ x_j $（即输入向量 $ x $ 的第 $ j $ 个元素），如果 $ i &#x3D; p $ 且 $ j &#x3D; q $，否则为 0。</p>
+<p>换句话说， $ \frac{\partial y}{\partial A} $ 中的每个元素都与输入向量 $ x $ 的对应元素相对应。</p>
+<p>不完全正确。虽然在某些情况下， $ \frac{dy}{dA} $ 可以简化为 $ x $ 的转置，但并不总是如此。</p>
+<p>在上面的计算中，我们得到了 $ \frac{dy}{dA} $ 的表达式，其中每个元素都与输入向量 $ x $ 的对应元素相对应。这意味着 $ \frac{dy}{dA} $ 的每一列都与 $ x $ 的对应元素相同，但并不是 $ x $ 的转置。</p>
+<p>只有当输入向量 $ x $ 是一个单位向量时， $ \frac{dy}{dA} $ 才等于 $ x $ 的转置。因为在这种情况下， $ y $ 是 $ A $ 的列向量之和， $ \frac{dy}{dA} $ 的每列只有一个非零元素，即 $ x $ 的对应元素。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/02/22/dl-1-extra/" data-id="clsw50hqa0000soy5fj7x39ja" data-title="dl_1-extra" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-dl-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/02/20/dl-1/" class="article-date">
@@ -95,7 +149,52 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>深度学习笔记（一）</p>
+        <h1 id="深度学习笔记（一）数学-编程基础"><a href="#深度学习笔记（一）数学-编程基础" class="headerlink" title="深度学习笔记（一）数学&amp;编程基础"></a>深度学习笔记（一）数学&amp;编程基础</h1><p>在本节中，将《Deep learning》一书的数学基础与机器学习基础知识与<a href>d2l.ai</a>的相关章节结合，辅以相关的python编程来讲解。</p>
+<h2 id="1-数据处理-预处理"><a href="#1-数据处理-预处理" class="headerlink" title="1 数据处理&amp;预处理"></a>1 数据处理&amp;预处理</h2><h3 id="1-1-数据处理"><a href="#1-1-数据处理" class="headerlink" title="1.1 数据处理"></a>1.1 数据处理</h3><p>&#x3D;&#x3D;（这是一个预先介绍的概念）&#x3D;&#x3D;</p>
+<p>张量：一个可能有很多维的数组</p>
+<p><code>torch.arange()</code>：创建一个均匀间隔值的向量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = torch.arange(<span class="number">10</span>, dtype=torch.float32)</span><br><span class="line"><span class="comment"># tensor([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])</span></span><br></pre></td></tr></table></figure>
+
+<p><code>x.shape</code>：查看张量的形状</p>
+<p><code>x.reshape()</code>：改变张量的形状</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x.reshape(<span class="number">2</span>,<span class="number">5</span>)</span><br><span class="line"><span class="comment"># tensor([[0., 1., 2., 3., 4.], [5., 6., 7., 8., 9.]])</span></span><br></pre></td></tr></table></figure>
+
+<p><code>torch.zeros/ones</code>：创建全0&#x2F;1张量</p>
+<p><code>torch.randn</code>：从给定的概率分布中随机且独立地采样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch.randn(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="comment"># tensor([[-0.7169,  0.0324,  0.2994,  0.7737], [ 1.2839,  1.6757,  1.1220,  0.8856], [ 0.4812,  0.5082,  0.2196,  1.3963]])</span></span><br></pre></td></tr></table></figure>
+
+<p>同样大小的张量可以直接进行四则运算与乘方运算</p>
+<p><code>x.sum()</code>：张量内元素求和</p>
+<p>索引：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">a = torch.rand(<span class="number">4</span>,<span class="number">3</span>,<span class="number">28</span>,<span class="number">28</span>)</span><br><span class="line">a[<span class="number">0</span>].shape  <span class="comment"># 第0张图片 torch.Size([3,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[<span class="number">0</span>,<span class="number">0</span>].shape  <span class="comment">#取第0张图片的第0个通道 torch.Size([28,28])</span></span><br><span class="line"> </span><br><span class="line">a[<span class="number">0</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>].shape  <span class="comment">#取第0张图片的第0个通道的第2行第4列的像素点 tensor(0.8082)</span></span><br><span class="line"></span><br><span class="line">a[:<span class="number">2</span>].shape  <span class="comment">#取前两张图片 torch.Size([2,3,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[:<span class="number">2</span>,:<span class="number">1</span>,:,:].shape <span class="comment">#取前两张图片第一个通道上的所有数据 torch.Size([2,1,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[:<span class="number">2</span>,<span class="number">1</span>:,:,:].shape <span class="comment">#取前两张图片后两个通道上的所有数据 torch.Size([2,2,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[:<span class="number">2</span>,-<span class="number">1</span>:,:,:].shape <span class="comment">#取前两张图片最后一个通道上的所有数据 torch.Size([2,1,28,28])</span></span><br><span class="line"></span><br><span class="line">a[:,:,<span class="number">0</span>:<span class="number">28</span>:<span class="number">2</span>,<span class="number">0</span>:<span class="number">28</span>:<span class="number">2</span>].shape  <span class="comment">#对所有图片所有通道的长和宽隔行采样 torch.Size([4,3,14,14])</span></span><br><span class="line"> </span><br><span class="line">a[:,:,::<span class="number">2</span>,::<span class="number">2</span>].shape  <span class="comment">#对所有图片所有通道的长和宽隔行采样 torch.Size([4,3,14,14])</span></span><br><span class="line"></span><br><span class="line">a.index_select(<span class="number">0</span>,torch.tensor([<span class="number">0</span>,<span class="number">2</span>])).shape <span class="comment"># 选第0张和第2张图片的所有通道所有长宽torch.Size([2,3,28,28])</span></span><br><span class="line"> </span><br><span class="line">a.index_select((<span class="number">1</span>,torch.tensor([<span class="number">1</span>,<span class="number">2</span>])).shape <span class="comment"># 选G,B通道所有图片所有长宽 torch.Size([4,2,28,28])</span></span><br><span class="line"> </span><br><span class="line">a.index_select((<span class="number">2</span>,torch.arange(<span class="number">8</span>)).shape <span class="comment">#所有图片所有通道8行所有宽 torch.Size([4,3,8,28])</span></span><br><span class="line"></span><br><span class="line">a[...].shape  <span class="comment"># torch.Size([4,3,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[<span class="number">0</span>,...].shape  <span class="comment"># torch.Size([3,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[:,<span class="number">1</span>,...].shape  <span class="comment"># torch.Size([4,28,28])</span></span><br><span class="line"> </span><br><span class="line">a[...,:<span class="number">2</span>].shape  <span class="comment"># torch.Size([4,3,28,2])</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-数据预处理"><a href="#1-2-数据预处理" class="headerlink" title="1.2 数据预处理"></a>1.2 数据预处理</h3><p>数据集读取：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data=pd.read_csv(file) <span class="comment"># 一个csv文件</span></span><br></pre></td></tr></table></figure>
+
+<p>数据准备：如果带有NaN，那么一种常见的启发方法是将其替换为相应列的均值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inputs = inputs.fillna(inputs.mean())</span><br></pre></td></tr></table></figure>
+
+<p>转换为张量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.tensor(imputs.to_numpy(dtype=<span class="built_in">float</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-线性代数"><a href="#2-线性代数" class="headerlink" title="2 线性代数"></a>2 线性代数</h2><h3 id="2-1-标量、向量、矩阵和张量"><a href="#2-1-标量、向量、矩阵和张量" class="headerlink" title="2.1 标量、向量、矩阵和张量"></a>2.1 标量、向量、矩阵和张量</h3><p>标量：单独的数</p>
+<p>向量：一列有序排列的数</p>
+<p>矩阵：一个二维数组</p>
+<p>张量：一个数组中的元素分布在若干维坐标的规则网格中</p>
+<p>在深度学习中通常利用张量进行计算，张量可以在GPU上进行加速。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = torch.tensor(<span class="number">1.0</span>) <span class="comment"># 标量</span></span><br><span class="line">x = torch.arange(<span class="number">3</span>)		<span class="comment"># 向量</span></span><br><span class="line">x = torch.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>)		<span class="comment"># 矩阵</span></span><br><span class="line">x.T <span class="comment"># 逆矩阵</span></span><br><span class="line">x = torch.tensor(<span class="number">24</span>).reshape(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)	<span class="comment"># 张量</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-矩阵和向量乘法"><a href="#2-2-矩阵和向量乘法" class="headerlink" title="2.2 矩阵和向量乘法"></a>2.2 矩阵和向量乘法</h3><p>矩阵哈达玛积：<code>C = A*B</code>	$res_{ij}&#x3D;A_{ij}B_{ij}$</p>
+<p>标量+张量：张量的每个元素与标量相加</p>
+<p>标量*张量：张量的每个元素与标量相乘</p>
+<p>向量点积：<code>torch.dot(x, y)</code></p>
+<p>矩阵乘法：<code>C = A@B</code></p>
+<h3 id="2-3-范数"><a href="#2-3-范数" class="headerlink" title="2.3 范数"></a>2.3 范数</h3><p>$l_1$范数：<code>torch.abs(u).sum()</code></p>
+<p>$l_2$范数：<code>torch.norm(u)</code></p>
+<h3 id="2-4-微积分"><a href="#2-4-微积分" class="headerlink" title="2.4 微积分"></a>2.4 微积分</h3><p>pytorch具有自动微分功能，<code>x.grad</code></p>
+<p>值得注意的是，这个grad是累积的，因此在进行反向传播前需要进行梯度清零</p>
 
       
     </div>
@@ -192,6 +291,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/02/22/dl-1-extra/">dl_1-extra</a>
+          </li>
         
           <li>
             <a href="/2024/02/20/dl-1/">dl_1</a>
