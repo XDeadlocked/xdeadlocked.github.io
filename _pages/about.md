@@ -12,7 +12,7 @@ Hi! I am currently a Ph.D. student at the University of Macau in the [AIGC-DL La
 I have had the privilege of working with some outstanding researchers, including:
 
 * [Zhengning Shi](https://www.flashszn.cn/): HHU (B.E.), NKU(Pursuing Ph.D)
-* [Yang Yu](https://github.com/maoyangou147): SEU(B.E.), DNU (M.S.), RedNote
+* [Yang Yu](https://github.com/maoyangou147): SEU(B.E.), NKU (M.S.), RedNote
 
 
 Research Statement
@@ -30,7 +30,6 @@ I enjoy the sense of joy that comes from solving math problems and the sense of 
 I am very interested in history, and I received 100/100 in history on the college entrance exam (ranking in the top 1% in Beijing).
 
 I really enjoy watching romance anime. My three favorite anime characters are: Kaguya Shinomiya, Shobu Himuro, and Tsukasa Yuzaki.
-
 
 
 
