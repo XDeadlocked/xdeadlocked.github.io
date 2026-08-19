@@ -23,7 +23,7 @@ repository               : "xdeadlocked/xdeadlocked.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.webp"
   name             : "Chen Xu"
   pronouns         : "he/him"  
   bio              : "University of Macau, Ph.D. Student"

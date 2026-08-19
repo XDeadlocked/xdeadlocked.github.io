@@ -8,9 +8,9 @@ date: 2024-07-01
 venue: '2024 IEEE International Conference on Multimedia and Expo (ICME)'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/10688340/'
 header:
-  teaser: /publications/TS-SAM.png
+  teaser: /publications/TS-SAM.webp
 # citation: 'Yang Yu, Chen Xu, Kai Wang. (2024). &quot;TS-SAM: Fine-Tuning Segment-Anything Model for Downstream Tasks.&quot; <i>2024 IEEE International Conference on Multimedia and Expo (ICME)</i>.'
 ---
 
 This publication page links to the IEEE abstract for the paper.
-<p><img src="/publications/TS-SAM.png" alt="TS-SAM figure" /></p>
+<p><img src="/publications/TS-SAM.webp" alt="TS-SAM figure" width="1200" height="760" loading="lazy" decoding="async" /></p>
