@@ -7,6 +7,10 @@ excerpt: 'This paper proposes TS-SAM (Two-Stream SAM), which enhances SAM with a
 date: 2024-07-01
 venue: '2024 IEEE International Conference on Multimedia and Expo (ICME)'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/10688340/'
+authors:
+  - Yang Yu
+  - Chen Xu
+  - Kai Wang
 header:
   teaser: /publications/TS-SAM.webp
 # citation: 'Yang Yu, Chen Xu, Kai Wang. (2024). &quot;TS-SAM: Fine-Tuning Segment-Anything Model for Downstream Tasks.&quot; <i>2024 IEEE International Conference on Multimedia and Expo (ICME)</i>.'

@@ -36,7 +36,16 @@
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
-    {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
+    <p class="archive__item-excerpt" itemprop="description">
+      {% if post.authors %}
+        {% include publication-authors.html publication=post %}<br>
+      {% elsif post.citation %}
+        {{ post.citation }}
+      {% endif %}
+      {% assign publication_year = post.date | date: "%Y" %}
+      {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}{% if post.date and post.venue contains publication_year %}{% elsif post.date %}{% if post.venue %}, {% endif %}{{ publication_year }}{% endif %}.
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
+    </p>
     </li>
  </article>
 </div>

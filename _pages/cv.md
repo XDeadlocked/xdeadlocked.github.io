@@ -2,6 +2,7 @@
 layout: archive
 title: "CV"
 permalink: /cv/
+description: "Academic CV of Chen Xu, a Ph.D. student at the University of Macau."
 author_profile: true
 redirect_from:
   - /resume
@@ -9,56 +10,28 @@ redirect_from:
 
 {% include base_path %}
 
+Academic Profile
+======
+**Chen Xu (许宸)**<br>
+Ph.D. Student, [AIGC-DL Lab](https://www.fst.um.edu.mo/research/laboratories/ai-generated-content-aigc-and-data-centric-learning-laboratory/), University of Macau<br>
+Macau · [deadlockeddeus@gmail.com](mailto:deadlockeddeus@gmail.com) · [Homepage]({{ base_path }}/) · [Google Scholar](https://scholar.google.com/citations?user=6nhZRMIAAAAJ) · [GitHub](https://github.com/XDeadlocked)
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **University of Macau** — Ph.D. student, *[start year and expected completion year not provided]*
+  * AIGC-DL Lab
+  * Supervisor: Prof. [Zhedong Zheng](https://www.zdzheng.xyz/)
+* **Nankai University** — Bachelor of Engineering in Computer Science and Technology, *[degree dates not provided]*
+  * NKICS Lab
+  * Advisors: Prof. [Tao Li](https://ics.nankai.edu.cn/12509/list.htm) and Prof. [Kai Wang](https://ics.nankai.edu.cn/12509/list.htm)
 
-Work experience
+Research
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Parameter-efficient fine-tuning of large models (PEFT)
+* Acceleration of diffusion and flow-matching models, including applications in image generation, image restoration, and VLA models
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
